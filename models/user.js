@@ -12,7 +12,6 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      //   match: emailRegexp, // new
       required: [true, 'Email is required'],
       unique: true,
     },
@@ -23,8 +22,8 @@ const userSchema = new Schema(
     },
     token: String,
   },
-  // { versionKey: false },
-  // { timestamps: true },
+  { versionKey: false },
+  { timestamps: true },
 );
 
 userSchema.post('save', handleMongooseError);
